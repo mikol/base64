@@ -1,0 +1,35 @@
+{
+  "name": "base64",
+  "version": "0.0.1",
+  "description": "Cross-platform base64 methods for encoding and decoding Unicode (16-bit) strings, including methods to make strings safe for use in `application/x-www-form-urlencoded` values.",
+  "main": "base64.js",
+  "scripts": {
+    "test": "./node_modules/criteria/bin/criteria test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikol/base64.git"
+  },
+  "keywords": [
+    "application/x-www-form-urlencoded",
+    "base64",
+    "base64ni",
+    "base64url",
+    "codec",
+    "digest value",
+    "ni",
+    "Named Information URI Format",
+    "URL query strings",
+    "RFC 4648",
+    "RFC 6920",
+    "Unicode",
+    "UTF-8"
+  ],
+  "author": "",
+  "license": "CC-BY-SA-4.0",
+  "bugs": {
+    "url": "https://github.com/mikol/base64/issues"
+  },
+  "homepage": "https://github.com/mikol/base64#readme",
+  "devDependencies": {}
+}
