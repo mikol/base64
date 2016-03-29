@@ -31,5 +31,8 @@
     "url": "https://github.com/mikol/base64/issues"
   },
   "homepage": "https://github.com/mikol/base64#readme",
-  "devDependencies": {}
+  "devDependencies": {
+    "actually": "git+https://github.com/mikol/actually.git",
+    "criteria": "git+https://github.com/mikol/criteria.git"
+  }
 }
