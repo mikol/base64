@@ -125,19 +125,6 @@ function factory(utf8) {
    */
   function decodeAsBytes(input) {
     var bytes = [];
-    decode_(input, function pushByte(b) {
-      bytes.push(b);
-    });
-
-    return bytes;
-  }
-
-  /**
-   * @param {string} input Input to decode.
-   * @param {function(number):void} pushByte Result accumulator.
-   * @private
-   */
-  function decode_(input, pushByte) {
     var nx = input.length;
     var x = 0;
 
@@ -155,7 +142,7 @@ function factory(utf8) {
         }
 
         if (!/^[\s\xa0]*$/.test(c)) {
-          throw Error('Unknown base64 encoding at char: ' + c);
+          throw Error('Unknown base64 encoding at character: ' + c);
         }
 
         // We encountered whitespace: loop around to the next input character.
@@ -175,7 +162,7 @@ function factory(utf8) {
       if (byte4 === 64) {
         if (byte1 === -1) {
           // No input left to decode.
-          return;
+          return bytes;
         }
         // Here we know an intermediate number of bytes are missing. The
         // defaults for byte2, byte3 and byte4 apply the inferred padding rules
@@ -185,15 +172,15 @@ function factory(utf8) {
       }
 
       var outByte1 = (byte1 << 2) | (byte2 >> 4);
-      pushByte(outByte1);
+      bytes.push(outByte1);
 
       if (byte3 != 64) {
         var outByte2 = ((byte2 << 4) & 0xF0) | (byte3 >> 2);
-        pushByte(outByte2);
+        bytes.push(outByte2);
 
         if (byte4 != 64) {
           var outByte3 = ((byte3 << 6) & 0xC0) | byte4;
-          pushByte(outByte3);
+          bytes.push(outByte3);
         }
       }
     }
