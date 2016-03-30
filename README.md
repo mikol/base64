@@ -1,11 +1,46 @@
 # base64
 
-Cross-platform base64 methods (`base64.encode()` and `base64.decode()`) for encoding and decoding Unicode (16-bit) strings (see [The “Unicode Problem”](https://goo.gl/oIGmAS)).
+Cross-platform base64 methods for encoding and decoding data. This module solves three problems.
 
-A URL- and filename-safe alphabet may be used either by itself
-(`base64.url.encode()` and `base64.url.decode()`) or while also excluding `'='`
-padding characters (`base64.ni.encode()` and `base64.ni.decode()`) to make
-strings safe for use in `application/x-www-form-urlencoded` values, including
-URL query strings, without requiring additional URI component encoding (see
-Named Information URI Format digest values in [RFC
-6920](https://goo.gl/z9KSEK)).
+  1. It works in Node.js and in any browser with or without `btoa()`, `atob()`,
+     Buffers, or TypedArrays.
+  2. It handles 16-bit-encoded strings, even those that contain characters
+     exceeding the 8-bit ASCII-encoding range (see
+     [The “Unicode Problem”](https://goo.gl/oIGmAS)).
+  3. It provides methods for encoding and decoding with a URL- and filename-safe
+     alphabet with or without `'='` padding characters so that encoded strings
+     can be safely used with `application/x-www-form-urlencoded` data, including
+     as part of URL query strings (see Named Information (ni) URI Format Digest
+     Values in [RFC 6920](https://goo.gl/z9KSEK)).
+
+## Installation
+
+```
+$ npm install https://github.com/mikol/base64
+```
+
+## Usage
+
+```
+var json = '{"alchemy": "🜘🜛🜜🜝🜞🜟🜠🜡🜣🜤🜥🜨🜩🜪🜫🜬🜭🜮🜯🜱"}';
+
+// Use canonical encoding.
+var b64 = base64.encode(json);
+
+// eyJhbGNoZW15IjogIvCfnJjwn5yb8J+co/CfnKTwn5yl8J+cqPCfnKnwn5yq8J+cr/CfnLEifQ==
+
+// Use URL- and filename-safe alphabet.
+var b64url = base64.url.encode(json);
+
+// eyJhbGNoZW15IjogIvCfnJjwn5yb8J-co_CfnKTwn5yl8J-cqPCfnKnwn5yq8J-cr_CfnLEifQ==
+
+// Use URL- and filename-safe alphabet. Omit '=' padding characters.
+var b64ni = base64.ni.encode(json);
+
+// eyJhbGNoZW15IjogIvCfnJjwn5yb8J-co_CfnKTwn5yl8J-cqPCfnKnwn5yq8J-cr_CfnLEifQ
+
+// Decode.
+base64.decode(b64);
+base64url.decode(b64url);
+base64ni.decode(b64ni);
+```
