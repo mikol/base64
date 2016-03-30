@@ -41,6 +41,6 @@ var b64ni = base64.ni.encode(json);
 
 // Decode.
 base64.decode(b64);
-base64url.decode(b64url);
-base64ni.decode(b64ni);
+base64.url.decode(b64url);
+base64.ni.decode(b64ni);
 ```
