@@ -39,8 +39,8 @@ var b64ni = base64.ni.encode(json);
 
 // eyJhbGNoZW15IjogIvCfnJjwn5yb8J-co_CfnKTwn5yl8J-cqPCfnKnwn5yq8J-cr_CfnLEifQ
 
-// Decode.
+// Decode. One method to rule them all.
 base64.decode(b64);
-base64.url.decode(b64url);
-base64.ni.decode(b64ni);
+base64.decode(b64url);
+base64.decode(b64ni);
 ```

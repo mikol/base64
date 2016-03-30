@@ -21,8 +21,6 @@ function factory(codec) {
     return urlEncode(b).replace(/=+$/g, '');
   }
 
-  var niDecode = urlDecode;
-
   function urlEncode(b) {
     return encode(b).replace(/\+/g, '-').replace(/\//g, '_');
   }
@@ -33,10 +31,10 @@ function factory(codec) {
 
   return {
     encode: encode,
-    decode: decode,
+    decode: urlDecode,
     ni: {
       encode: niEncode,
-      decode: niDecode
+      decode: urlDecode
     },
     url: {
       encode: urlEncode,

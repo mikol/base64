@@ -185,11 +185,11 @@ function factory(base64, data, actually, matches) {
     });
   });
 
-  scope('`base64.ni.decode()` Tests',
+  scope('`base64.decode()` NI-Encoded Tests',
   function () {
     test('Decodes as ASCII string.',
     function () {
-      var actual = base64.ni.decode(data.ascii.base64ni);
+      var actual = base64.decode(data.ascii.base64ni);
       var expected = data.ascii.string;
 
       actually(matches, expected, actual);
@@ -197,7 +197,7 @@ function factory(base64, data, actually, matches) {
 
     test('Decodes as Latin string.',
     function () {
-      var actual = base64.ni.decode(data.latin.base64ni);
+      var actual = base64.decode(data.latin.base64ni);
       var expected = data.latin.string;
 
       actually(matches, expected, actual);
@@ -205,7 +205,7 @@ function factory(base64, data, actually, matches) {
 
     test('Decodes as 1-, 2-, 3-, and 4-byte characters.',
     function () {
-      var actual = base64.ni.decode(data.nbyte.base64ni);
+      var actual = base64.decode(data.nbyte.base64ni);
       var expected = data.nbyte.string;
 
       actually(matches, expected, actual);
@@ -213,7 +213,7 @@ function factory(base64, data, actually, matches) {
 
     test('Decodes as alchemical surrogate pair string.',
     function () {
-      var actual = base64.ni.decode(data.alchemy.base64ni);
+      var actual = base64.decode(data.alchemy.base64ni);
       var expected = data.alchemy.string;
 
       actually(matches, expected, actual);
@@ -221,7 +221,7 @@ function factory(base64, data, actually, matches) {
 
     test('Decodes as emoji emoticon surrogate pair string.',
     function () {
-      var actual = base64.ni.decode(data.emoticons.base64ni);
+      var actual = base64.decode(data.emoticons.base64ni);
       var expected = data.emoticons.string;
 
       actually(matches, expected, actual);
@@ -229,7 +229,7 @@ function factory(base64, data, actually, matches) {
 
     test('Decodes as supplementary string.',
     function () {
-      var actual = base64.ni.decode(data.supplementary.base64ni);
+      var actual = base64.decode(data.supplementary.base64ni);
       var expected = data.supplementary.string;
 
       actually(matches, expected, actual);
@@ -237,7 +237,7 @@ function factory(base64, data, actually, matches) {
 
     test('Decodes as byte boundary characters.',
     function () {
-      var actual = base64.ni.decode(data.boundaries.base64ni);
+      var actual = base64.decode(data.boundaries.base64ni);
       var expected = data.boundaries.string;
 
       actually(matches, expected, actual);
@@ -303,11 +303,11 @@ function factory(base64, data, actually, matches) {
     });
   });
 
-  scope('`base64.url.decode()` Tests',
+  scope('`base64.decode()` URL-Encoded Tests',
   function () {
     test('Decodes as ASCII string.',
     function () {
-      var actual = base64.url.decode(data.ascii.base64url);
+      var actual = base64.decode(data.ascii.base64url);
       var expected = data.ascii.string;
 
       actually(matches, expected, actual);
@@ -315,7 +315,7 @@ function factory(base64, data, actually, matches) {
 
     test('Decodes as Latin string.',
     function () {
-      var actual = base64.url.decode(data.latin.base64url);
+      var actual = base64.decode(data.latin.base64url);
       var expected = data.latin.string;
 
       actually(matches, expected, actual);
@@ -323,7 +323,7 @@ function factory(base64, data, actually, matches) {
 
     test('Decodes as 1-, 2-, 3-, and 4-byte characters.',
     function () {
-      var actual = base64.url.decode(data.nbyte.base64url);
+      var actual = base64.decode(data.nbyte.base64url);
       var expected = data.nbyte.string;
 
       actually(matches, expected, actual);
@@ -331,7 +331,7 @@ function factory(base64, data, actually, matches) {
 
     test('Decodes as alchemical surrogate pair string.',
     function () {
-      var actual = base64.url.decode(data.alchemy.base64url);
+      var actual = base64.decode(data.alchemy.base64url);
       var expected = data.alchemy.string;
 
       actually(matches, expected, actual);
@@ -339,7 +339,7 @@ function factory(base64, data, actually, matches) {
 
     test('Decodes as emoji emoticon surrogate pair string.',
     function () {
-      var actual = base64.url.decode(data.emoticons.base64url);
+      var actual = base64.decode(data.emoticons.base64url);
       var expected = data.emoticons.string;
 
       actually(matches, expected, actual);
@@ -347,7 +347,7 @@ function factory(base64, data, actually, matches) {
 
     test('Decodes as supplementary string.',
     function () {
-      var actual = base64.url.decode(data.supplementary.base64url);
+      var actual = base64.decode(data.supplementary.base64url);
       var expected = data.supplementary.string;
 
       actually(matches, expected, actual);
@@ -355,7 +355,7 @@ function factory(base64, data, actually, matches) {
 
     test('Decodes as byte boundary characters.',
     function () {
-      var actual = base64.url.decode(data.boundaries.base64url);
+      var actual = base64.decode(data.boundaries.base64url);
       var expected = data.boundaries.string;
 
       actually(matches, expected, actual);
