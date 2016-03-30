@@ -21,7 +21,7 @@ $ npm install https://github.com/mikol/base64
 
 ## Usage
 
-```
+```javascript
 var json = '{"alchemy": "🜘🜛🜜🜝🜞🜟🜠🜡🜣🜤🜥🜨🜩🜪🜫🜬🜭🜮🜯🜱"}';
 
 // Use canonical encoding.
