@@ -68,12 +68,7 @@ function factory(utf8) {
    * @return {string} The decoded value.
    */
   function decodeAsString(string) {
-    var characters = [];
-    decode_(string, function pushByte(b) {
-      characters.push(String.fromCharCode(b));
-    });
-
-    return characters.join('');
+    return utf8.asString(decodeAsBytes(string));
   }
 
   /**

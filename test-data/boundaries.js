@@ -9,6 +9,7 @@ var dependencies = [];
 function factory() {
   return {
     /* jscs:disable maximumLineLength */
+    base64: 'QUFB8KCcjkLwn5yYQ0NDREVFw4lGRkbCtkZHR0hISOKCrA==',
     bytes: [65, 65, 65, 240, 160, 156, 142, 66, 240, 159, 156, 152, 67, 67, 67, 68, 69, 69, 195, 137, 70, 70, 70, 194, 182, 70, 71, 71, 72, 72, 72, 226, 130, 172],
     string: 'AAA𠜎B🜘CCCDEEÉFFF¶FGGHHH€'
     /* jscs:enable maximumLineLength */
