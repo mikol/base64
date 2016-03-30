@@ -14,7 +14,7 @@ function factory(codec) {
 
   // cf. atob
   var decode = codec && codec.decodeAsString || function (a) {
-    return '' + new Buffer(a, 'base64');
+    return '' + new Buffer(a.replace(/-/g, '+').replace(/_/g, '/'), 'base64');
   };
 
   function niEncode(b) {
@@ -25,20 +25,14 @@ function factory(codec) {
     return encode(b).replace(/\+/g, '-').replace(/\//g, '_');
   }
 
-  function urlDecode(a) {
-    return decode(a.replace(/-/g, '+').replace(/_/g, '/'));
-  }
-
   return {
     encode: encode,
-    decode: urlDecode,
+    decode: decode,
     ni: {
-      encode: niEncode,
-      decode: urlDecode
+      encode: niEncode
     },
     url: {
-      encode: urlEncode,
-      decode: urlDecode,
+      encode: urlEncode
     }
   };
 }
